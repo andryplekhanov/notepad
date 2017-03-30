@@ -28,6 +28,6 @@ class Post
 
     file_name = @created_at.strftime("#{self.class.name}_%Y-%m-%d_%H-%M-%S.txt")
 
-    current_path + "../" + file_name
+    current_path + "../notes/" + file_name
   end
 end
