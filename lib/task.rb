@@ -12,9 +12,14 @@ class Task < Post
     @text = STDIN.gets.chomp
 
     puts "К какому числу сделать? Введите ответ в формате ДД.ММ.ГГГГ"
-    date = STDIN.gets.chomp
 
-    @due_date = Date.parse(date)
+    begin
+      date = STDIN.gets.chomp
+
+      @due_date = Date.parse(date)
+    rescue ArgumentError
+      abort "ОШИБКА: неверный формат даты"
+    end
   end
 
   def to_strings
